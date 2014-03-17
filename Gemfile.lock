@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     seo (0.0.1)
-      rails (~> 3.2.17)
+      rails (~> 3.2.13)
 
 GEM
   remote: https://rubygems.org/
@@ -42,13 +42,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.1.0)
+    database_cleaner (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    factory_girl (4.4.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.4.1)
-      factory_girl (~> 4.4.0)
-      railties (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     journey (1.0.4)
@@ -59,6 +56,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.9.0)
@@ -66,6 +64,12 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     polyglot (0.3.4)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-nav (0.2.3)
+      pry (~> 0.9.10)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -103,6 +107,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    slop (3.5.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -122,8 +127,9 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  factory_girl_rails
+  database_cleaner
   jquery-rails
   mysql2
+  pry-nav
   rspec-rails
   seo!
