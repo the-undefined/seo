@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Origin:</b>
+  <%= page_title(@permanent_redirect.origin_id) %>
+</p>
+
+<p>
+  <b>Destination:</b>
+  <%= page_title(@permanent_redirect.destination_id) %>
+</p>
+
+
+<%= link_to 'Edit', edit_permanent_redirect_path(@permanent_redirect) %> |
+<%= link_to 'Back', permanent_redirects_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@permanent_redirect) do |f| %>
+  <% if @permanent_redirect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@permanent_redirect.errors.count, "error") %> prohibited this permanent_redirect from being saved:</h2>
+
+      <ul>
+      <% @permanent_redirect.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :origin_id %><br />
+    <%= f.select :origin_id, page_select_options %>
+  </div>
+  <div class="field">
+    <%= f.label :destination_id %><br />
+    <%= f.select :destination_id, page_select_options %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
