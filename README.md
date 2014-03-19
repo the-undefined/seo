@@ -19,7 +19,11 @@ class PagesController < ApplicationController
 end
 ```
 
-Now set up a redirect using the engine Web UI: [localhost:3000/seo/permanent_redirects](http://localhost:3000/seo/permanent_redirects). The fields correspond to:
+Now set up a redirect using the engine Web UI: [localhost:3000/seo/permanent_redirects](http://localhost:3000/seo/permanent_redirects).
+
+![New permanent redirect form](docs/source/new_permanent_redirect_form.png)
+
+The form fields correspond to:
 
 - **Origin**: The page that you would like to redirect from
 - **Destination**: The page you would like to redirect to

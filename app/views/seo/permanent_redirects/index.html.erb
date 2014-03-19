@@ -1,25 +1,28 @@
-<h1>Listing permanent_redirects</h1>
-
-<table>
-  <tr>
-    <th>Origin</th>
-    <th>Destination</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @permanent_redirects.each do |permanent_redirect| %>
-  <tr>
-    <td><%= page_title(permanent_redirect.origin_id) %></td>
-    <td><%= page_title(permanent_redirect.destination_id) %></td>
-    <td><%= link_to 'Show', permanent_redirect %></td>
-    <td><%= link_to 'Edit', edit_permanent_redirect_path(permanent_redirect) %></td>
-    <td><%= link_to 'Destroy', permanent_redirect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<h1 class="page-header">Listing Permanent Redirects</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+	<th>Origin</th>
+	<th>Destination</th>
+	<th></th>
+	<th></th>
+	<th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @permanent_redirects.each do |permanent_redirect| %>
+      <tr>
+	<td><%= page_title(permanent_redirect.origin_id) %></td>
+	<td><%= page_title(permanent_redirect.destination_id) %></td>
+	<td><%= link_to 'Show', permanent_redirect, class: 'btn btn-default' %></td>
+	<td><%= link_to 'Edit', edit_permanent_redirect_path(permanent_redirect), class: 'btn btn-default' %></td>
+	<td><%= link_to 'Destroy', permanent_redirect, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <br />
 
-<%= link_to 'New Permanent redirect', new_permanent_redirect_path %>
+<%= link_to 'New Permanent redirect', new_permanent_redirect_path, class: 'btn btn-primary' %>

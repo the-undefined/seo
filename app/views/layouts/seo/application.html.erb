@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Seo</title>
-  <%= stylesheet_link_tag    "seo/application", :media => "all" %>
-  <%= javascript_include_tag "seo/application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Seo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
-<%= yield %>
+    <%= stylesheet_link_tag    "seo/application", :media => "all" %>
+    <%= javascript_include_tag "seo/application" %>
 
-</body>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+	<div class="navbar-header">
+          <a class="navbar-brand" href="#">SEO Manager</a>
+	</div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="<%= permanent_redirects_path %>">Permanent Redirects</a></li>
+	    <li class="disabled"><a href="#">Manage meta tags</a></li>
+	    <li class="disabled"><a href="#">Manage robots.txt</a></li>
+            <li class="disabled"><a href="#">Add google tracking code</a></li>
+            <li class="disabled"><a href="#">Add verification codes</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <%= yield %>
+	</div>
+      </div>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
 </html>
