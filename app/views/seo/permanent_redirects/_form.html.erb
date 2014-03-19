@@ -1,7 +1,7 @@
-<%= form_for(@permanent_redirect) do |f| %>
+<%= form_for(@permanent_redirect, html: { css: 'form-horizontal', role: 'form'}) do |f| %>
   <% if @permanent_redirect.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@permanent_redirect.errors.count, "error") %> prohibited this permanent_redirect from being saved:</h2>
+      <h2><%= pluralize(@permanent_redirect.errors.count, "error") %> prohibited this permanent redirect from being saved:</h2>
 
       <ul>
       <% @permanent_redirect.errors.full_messages.each do |msg| %>
@@ -11,15 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :origin_id %><br />
-    <%= f.select :origin_id, page_select_options %>
+  <div class="form-group">
+    <%= f.label :origin_id %>
+    <%= f.select :origin_id, page_select_options, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :destination_id %><br />
+
+  <div class="form-group">
+    <%= f.label :destination_id %>
     <%= f.select :destination_id, page_select_options %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
