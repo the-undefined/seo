@@ -49,7 +49,7 @@ class PagesController < ApplicationController
   def fetch_page_id(params)
     id = params.fetch(:id)
 
-    unless id =~ /d+/ # friendly_id gem compatability
+    unless id =~ /\d+/ # friendly_id gem compatability
       id = Seo.page_class.find(id).id
     end
 
