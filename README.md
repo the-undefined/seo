@@ -75,6 +75,8 @@ If you desire to use something other than the `url_for` method to determine wher
 ```ruby
 class PagesController < ApplicationController
   include Seo::Redirects
+  
+  # ...
 
   private
 
