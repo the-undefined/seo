@@ -3,6 +3,14 @@ SEO
 
 Rails engine with mounted UI to instigate activites to assist SEO personel.
 
+```ruby
+feature %[
+  As a SEO administrator
+  I would like to use an SEO engine
+  So that I can achieve my tasks on my own (and not pester developers!)
+] do
+```
+
 ## 301 Redirects
 
 These relate to SEO in the sense of forwarding on search engine rankings that you have built up.
