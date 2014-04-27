@@ -109,3 +109,9 @@ body {
   border-radius: 50%;
 }
 
+/*
+* Errors
+*/
+#error_explanation p {
+ padding: 8px 15px;
+}

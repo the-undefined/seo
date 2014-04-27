@@ -17,10 +17,13 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/**"]
 
   s.add_dependency "rails", "~> 3.2"
+  s.add_dependency 'coffee-rails'
 
   s.add_development_dependency "mysql2"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara"
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "pry-nav"
+  s.add_development_dependency "therubyracer"
+  s.add_development_dependency "selenium-webdriver"
 end

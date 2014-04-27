@@ -11,13 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140317124551) do
+ActiveRecord::Schema.define(:version => 20140429061345) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "seo_meta_contents", :force => true do |t|
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.string   "meta_title"
+    t.text     "meta_description"
+    t.text     "meta_keywords"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "seo_permanent_redirects", :force => true do |t|

@@ -1,4 +1,5 @@
 require "seo/engine"
+require 'seo/acts_as_seo_content'
 
 module Seo
   mattr_accessor :page_class

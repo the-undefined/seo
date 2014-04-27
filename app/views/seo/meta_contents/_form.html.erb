@@ -1,0 +1,44 @@
+<%= form_for(@meta_content, html: { css: 'form-horizontal', role: 'form' }) do |f| %>
+  <% if @meta_content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meta_content.errors.count, "error") %> prohibited this meta content from being saved:</h2>
+      <% @meta_content.errors.full_messages.each do |msg| %>
+      <p class="text-danger bg-danger"><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :resource_type %><br />
+    <%= f.select :resource_type, resource_type_select_options %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :resource_id %><br />
+    <% resource_select_options_by_type.each_pair do |klass,choices| %>
+      <div class="resource-select-by-type" data-klass="<%= klass %>">
+	<%= select "#{klass.downcase}_resource", "resource_ids", choices, include_blank: true %>
+      </div>
+    <% end %>
+    <%= f.hidden_field :resource_id %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :meta_title %><br />
+    <%= f.text_field :meta_title %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :meta_description %><br />
+    <%= f.text_area :meta_description %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :meta_keywords %><br />
+    <%= f.text_area :meta_keywords %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
