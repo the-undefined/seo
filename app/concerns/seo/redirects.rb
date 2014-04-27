@@ -24,7 +24,7 @@ module Seo
       end
 
       def permanent_redirect(origin)
-        Seo::PermanentRedirect.where(origin_id: origin)[0]
+        ::Seo::PermanentRedirect.where(origin_id: origin)[0]
       end
 
       def url_for_destination(page)
@@ -32,7 +32,7 @@ module Seo
       end
 
       def redirect_destination(redirect)
-        Seo.page_class.find(redirect.destination_id)
+        ::Seo.page_class.find(redirect.destination_id)
       end
     end
   end
