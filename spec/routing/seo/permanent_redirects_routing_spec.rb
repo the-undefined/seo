@@ -2,7 +2,7 @@ require "spec_helper"
 
 module Seo
   describe PermanentRedirectsController do
-    routes { Seo::Engine.routes }
+    routes { ::Seo::Engine.routes }
     describe "routing" do
   
       it "routes to #index" do

@@ -20,7 +20,7 @@ require 'spec_helper'
 
 module Seo
   describe PermanentRedirectsController do
-    routes { Seo::Engine.routes }
+    routes { ::Seo::Engine.routes }
 
     # This should return the minimal set of attributes required to create a valid
     # PermanentRedirect. As you add validations to PermanentRedirect, be sure to
