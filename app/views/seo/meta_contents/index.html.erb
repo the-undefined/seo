@@ -1,0 +1,34 @@
+<h1 class="page-header">Listing Resource Meta Tags</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+	<th>Resource</th>
+	<th>Resource type</th>
+	<th>Meta title</th>
+	<th>Meta description</th>
+	<th>Meta keywords</th>
+	<th></th>
+	<th></th>
+	<th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @meta_contents.each do |meta_content| %>
+      <tr>
+	<td><%= meta_content.resource_title %></td>
+	<td><%= meta_content.resource_type %></td>
+	<td><%= meta_content.meta_title %></td>
+	<td><%= meta_content.meta_description %></td>
+	<td><%= meta_content.meta_keywords %></td>
+	<td><%= link_to 'Show', meta_content, class: 'btn btn-default' %></td>
+	<td><%= link_to 'Edit', edit_meta_content_path(meta_content), class: 'btn btn-default' %></td>
+	<td><%= link_to 'Destroy', meta_content, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br />
+
+<%= link_to 'New Meta content', new_meta_content_path, class: 'btn btn-primary' %>

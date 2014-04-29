@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Resource:</b>
+  <%= @meta_content.resource_title %>
+</p>
+
+<p>
+  <b>Resource type:</b>
+  <%= @meta_content.resource_type %>
+</p>
+
+<p>
+  <b>Meta title:</b>
+  <%= @meta_content.meta_title %>
+</p>
+
+<p>
+  <b>Meta description:</b>
+  <%= @meta_content.meta_description %>
+</p>
+
+<p>
+  <b>Meta keywords:</b>
+  <%= @meta_content.meta_keywords %>
+</p>
+
+
+<%= link_to 'Edit', edit_meta_content_path(@meta_content) %> |
+<%= link_to 'Back', meta_contents_path %>
