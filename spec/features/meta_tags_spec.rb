@@ -13,9 +13,7 @@ feature %[
 
   background do
     page_one # eager load to populate the database
-  end
 
-  scenario "adding meta content for a resource" do
     visit '/seo/meta_contents'
 
     click_link "New"
@@ -27,11 +25,10 @@ feature %[
     fill_in "meta_content_meta_description", with: meta_description
     fill_in "meta_content_meta_keywords", with: meta_keywords
 
-    expect{ click_on "Create Meta content" }.not_to raise_error
+    click_on "Create Meta content"
   end
 
   scenario "addind a meta title, description and keywords" do
-    pending
     visit page_path(page_one)
     expect(html).to include(meta_title)
     expect(html).to include(meta_description)
