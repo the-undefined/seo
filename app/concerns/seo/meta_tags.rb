@@ -46,7 +46,8 @@ module Seo
       end
 
       def _resource_model_for_meta_tags
-        controller_name.singularize.capitalize
+        # i.e. 'press_releases' becomes 'PressRelease'
+        controller_name.singularize.split('_').map(&:capitalize).join
       end
 
       def _resource_id_for_meta_tags
