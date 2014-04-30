@@ -16,10 +16,13 @@ module Seo
     end
 
     module ClassMethods
-      def acts_as_seo_content
+      def acts_as_seo_content(options={})
         unless Seo::ActsAsSeoContent.registered_models.include?(self.to_s)
           Seo::ActsAsSeoContent.registered_models << self.to_s
         end
+
+        cattr_accessor :seo_resource_title
+        self.seo_resource_title = (options[:seo_resource_title] || :title)
       end
     end
   end
