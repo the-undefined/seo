@@ -6,7 +6,8 @@ module Seo
     validates_uniqueness_of :resource_id, scope: :resource_type, message: "has already been used"
 
     def resource_title
-      resource_type.constantize.find(resource_id).title
+      resource = resource_type.constantize.find(resource_id)
+      resource.send(resource.seo_resource_title)
     end
   end
 end

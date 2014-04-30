@@ -19,7 +19,10 @@ module Seo
     end
 
     def model_records(model_klass)
-      model_klass.constantize.all.map {|model| [model.title, model.id] }
+      model_klass.constantize.all.map do |instance|
+        title_attr = instance.seo_resource_title
+        [instance.send(title_attr), instance.id]
+      end
     end
   end
 end
