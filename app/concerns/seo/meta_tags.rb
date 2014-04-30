@@ -20,6 +20,12 @@ module Seo
                             resource_id: _resource_id_for_meta_tags).first
       end
 
+
+      def meta_tags_error_policy(e)
+        # NOOP
+        nil
+      end
+
       private
 
       def _set_title_tag
@@ -28,21 +34,21 @@ module Seo
 
       def _set_meta_description_tag
         @meta_description = meta_content.meta_description
-      rescue
-        # NOOP
+      rescue Exception => e
+        meta_tags_error_policy(e)
       end
 
       def _set_meta_keywords_tag
         @meta_keywords = meta_content.meta_keywords
-      rescue
-        # NOOP
+      rescue Exception => e
+        meta_tags_error_policy(e)
       end
 
       def _resource_meta_title
         raise if meta_content.meta_title.strip.blank?
         meta_content.meta_title
-      rescue
-        # NOOP
+      rescue Exception => e
+        meta_tags_error_policy(e)
       end
 
       def _resource_model_for_meta_tags
