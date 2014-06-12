@@ -10,6 +10,7 @@ module Seo
 
     included do
       after_destroy -> do
+        return unless Seo::ActsAsSeoContent.registered_models.include?(self.class.to_s)
         MetaContent.where(resource_type: self.class.to_s, resource_id: self.id).
           delete_all
       end
